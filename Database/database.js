@@ -15,7 +15,8 @@ const VideoData = sequelize.define('VideoData', {
       allowNull: false
     },
     videoLocation: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        defaultValue: 0
     }
   }, {
   });

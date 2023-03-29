@@ -14,11 +14,17 @@ router.get('/', async function(req, res, next) {
 });
 
 router.post('/uploadFile', upload.single('videoFile'), async function(req, res, next) {
-  console.log("POST hit");
   console.log(req.file, req.body)
-  
-  res.send("Test")
 
+  const videoEntry = VideoData.build({
+    videoTitle: req.body.videoTitle,
+    videoUrl: req.file.originalname,
+    videoStartDateTime: req.body.videoStartDateTime,
+    videoLocation: req.body.videoLocation
+  })
+
+  await videoEntry.save();
+  res.send("Successfully uploaded file!")
 });
 
 
