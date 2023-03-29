@@ -16,7 +16,7 @@ var credentials = {key: privateKey, cert: certificate};
 var app = express();
 var httpsServer = https.createServer(credentials, app);
 app.use(cors({
-  origin: 'https://wizard-demo-app-5p2gb.ondigitalocean.app/', // Allow requests from this origin
+  origin: '*', // Allow requests from this origin
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow these methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow these headers
 }));
