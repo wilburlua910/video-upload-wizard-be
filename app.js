@@ -9,8 +9,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var sendVideo = require('./routes/sendVideo');
 
-var privateKey  = fs.readFileSync('sslcert/server.key', 'utf8');
-var certificate = fs.readFileSync('sslcert/server.crt', 'utf8');
+var privateKey  = fs.readFileSync('../selfsigned.key', 'utf8');
+var certificate = fs.readFileSync('../selfsigned.crt', 'utf8');
 var credentials = {key: privateKey, cert: certificate};
 
 var app = express();
