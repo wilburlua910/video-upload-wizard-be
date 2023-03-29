@@ -7,7 +7,6 @@ const {VideoData} = require('../Database/database') //Db is set up
 /* GET users listing. */
 router.get('/', async function(req, res, next) {
   res.send('Send video GET');
-
   const vd = await VideoData.findAll();
   console.log(vd);
 
@@ -25,6 +24,8 @@ router.post('/uploadFile', upload.single('videoFile'), async function(req, res, 
 
   await videoEntry.save();
   res.send("Successfully uploaded file!")
+
+
 });
 
 
