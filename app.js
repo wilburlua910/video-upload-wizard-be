@@ -11,7 +11,7 @@ var sendVideo = require('./routes/sendVideo');
 var app = express();
 
 app.use(cors({
-  origin: 'https://wizard-demo-app-5p2gb.ondigitalocean.app/:3000', // Allow requests from this origin
+  origin: 'http://wizard-demo-app-5p2gb.ondigitalocean.app/:3000', // Allow requests from this origin
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow these methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow these headers
 }));
